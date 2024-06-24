@@ -41,7 +41,7 @@ h1 {
 
 main {
   display: grid;
-  grid-template-columns: 1fr; /* One column for content */
+  grid-template-columns: 1fr, 10fr /* One column for content */
   grid-gap: 20px;
   padding: 20px;
   background-color: #f8f8f8; /* Optional: Light gray background */
