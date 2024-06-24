@@ -1,117 +1,325 @@
-body {
-  font-family: Arial, sans-serif;
+@import url('https//fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+*
+{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-header {
-  background-color: #f1f1f1;
-  padding: 20px;
-  text-align: center;
-}
-
-h1 {
-  font-size: 2em;
-  margin-bottom: 5px;
-}
-
-.title {
-  font-style: italic;
-  margin-top: 0;
-}
-
-.contact {
-  display: flex; /* Use flexbox for horizontal layout */
+body{
+  background: lightblue;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  padding: 15px;
-  background-color: #ddd;
-  border-radius: 5px;
+  min-height: 100vh;
 }
 
-.contact ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.contact li {
-  margin-right: 10px;
-}
-
-main {
+.container
+{
+  position: relative;
+  width: 100%;
+  max-width: 62.5em;
+  min-height: 62.5em;
+  background-color: #fff;
+  margin: 3.125em;
   display: grid;
-  grid-template-columns: 1fr, 10fr /* One column for content */
-  grid-gap: 20px;
-  padding: 20px;
-  background-color: #f8f8f8; /* Optional: Light gray background */
+  grid-template-columns: 1fr 2fr;
+  box-shadow: 0 2.188em 3.438em rgba(0, 0, 0, 0.1);
 }
 
-section {
-  margin-bottom: 20px;
-  padding: 15px;
-  border: 1px solid #eee;
-  border-radius: 5px;
+.container .left_Side
+ {
+  position: relative;
+  background-color: #003147;
+  padding: 2.5em;
 }
 
-h2 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
+.profileText
+{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 1.25em;
+  border-bottom:  0.063em solid rgba(255, 255, 255, 0.2);
 }
 
-.skills ul {
+.profileText .imgBx 
+{
+position: relative;
+width: 12.5em;
+height: 12.5em;
+border-radius: 50%;
+overflow: hidden;
+}
+
+.profileText .imgBx img 
+{
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%; 
+  object-fit: cover;
+}
+
+.profileText h2 
+{
+  color: #fff;
+  font-size: 1.25em;
+  margin-top: 1.25em;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 600;
+  line-height: 1.4em;
+}
+
+
+.profileText h2 span
+{
+  font-size: 0.7em;
+  font-weight: 300;
+}
+
+.contactInfo 
+{
+  padding-top: 2.5em;
+}
+
+.contactInfo .title
+{
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.063em;
+  margin-bottom: 1.25em;
+}
+
+
+.contactInfo ul li 
+{
+  position: relative;
   list-style: none;
-  padding: 0;
-  columns: 2; /* Adjust for two columns if needed */
+  margin: 0.625em 0;
+  cursor: pointer;
+
 }
 
-.experience ul,
-.education ul {
-  list-style: none;
-  padding: 0;
+.contactInfo ul li .icon
+{
+  display: inline-block;
+  width: 1.875em;
+  font-size: 1.125em;
+  color: #03a9f4;
 }
 
-.experience li,
-.education li {
-  margin-bottom: 15px;
+.contactInfo ul li span,
+.contactInfo ul li a
+{
+  color: #fff;
+  font-weight: 300;
 }
 
-.experience h3,
-.education h3 {
-  font-size: 1.2em;
-  margin-bottom: 5px;
+.contactInfo ul li .text 
+{
+  font-size: 0.875em;
 }
 
-.experience h4,
-.education h4 {
-  font-size: 1em;
-  margin-bottom: 3px;
-  color: #aaa;
+.contactInfo.education li
+{
+  margin-bottom: 0.938em;
 }
 
+.contactInfo.education h5
+{
+  color: #03a9f4;
+  font-weight: 500;
+}
 
+.contactInfo.education h4:nth-child(2)
+{
+  color: #fff;
+  font-weight: 500;
+}
 
-/* Base styles for all devices */
+.contactInfo.education h4
+{
+  color: #fff;
+  font-weight: 300;
+}
 
-/* Styles for screens smaller than 768px (tablets and mobiles) */
-@media only screen and (max-width: 768px) {
-    body {
-      font-size: 0.8em; /* Reduce font size for better readability */
-    }
-    
-    header {
-      padding: 10px; /* Adjust padding for smaller screens */
-    }
-    
-    h1 {
-      font-size: 1.5em; /* Adjust heading size */
-    }
-    
-    .skills ul {
-      columns: 1; /* Make skills list single column on mobiles */
-    }
-    
-    /* Add more styles for smaller screens as needed */
-  }
+.contactInfo.language .percent
+{
+  position: relative;
+  width: 100%;
+  height: 0.375em;
+  background-color: #081921;
+  display: block;
+  margin-top: 0.313em;
   
-  /* You can add more media queries for different screen sizes (e.g., desktops) */
+}
+
+.contactInfo.language .percent div
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #03a9f4; 
+}
+
+.container .right_Side {
+  position: relative;
+  background-color: #fff;
+  padding: 2.5em;
+}
+
+.about
+{
+  margin-bottom: 3.125em;
+}
+
+.abbout:last-child
+{
+  margin-bottom: 0;
+}
+
+.title2
+{
+  color:#003147;
+  text-transform: uppercase;
+  letter-spacing: 0.063em;
+  margin-bottom: 0.625em;
+}
+
+p
+{
+  color: #333;
+}
+
+.about .box
+{
+  display: flex;
+  flex-direction: row;
+  margin: 1.25em 0;
+}
+
+.about .box .year_company
+{
+  min-width: 9.375em;
+}
+
+.about .box .year_company h5
+{
+  text-transform: uppercase;
+  color: #848c90;
+  font-weight: 600;
+}
+
+.about .box .text h4
+{
+  text-transform: uppercase;
+  color: #2a7da2;
+  font-size: 1em;
+}
+
+.skills .box
+{
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 9.375em 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills .box h4 
+{
+  text-transform: uppercase;
+  color: #848c99;
+  font-weight: 500;
+}
+
+
+.skills .box .percent
+/*.skills .box */
+{
+  position: relative;
+  width: 100%;
+  height: 0.625em;
+  background: #f0f0f0;
+}
+
+.skills .box .percent div
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #03a9f4;
+}
+
+.interest ul
+{
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+}
+
+.interest ul li 
+{
+  list-style: none;
+  color: #333;
+  font-weight: 500;
+  margin: 0.625em 0;
+}
+
+.interest ul li .fa
+{
+  color: #03a9f4;
+  font-size: 1.125em;
+  width:  1.25em;
+}
+
+@media (max-width: 1051px){
+  .contactInfo ul li {
+    font-size: 0.70em;
+  }
+}
+
+@media (max-width: 920px){
+  .container {
+    margin:0.625em;
+    grid-template-columns: repeat(1,1fr);
+  }
+  .interest ul{
+    grid-template-columns: repeat(2,1fr);
+  }
+  .contactInfo ul li {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 850px){
+  .about .box {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 700px){
+  .about .box .percent{
+    flex-direction: column;
+  }
+  .skills .box
+  {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+  }
+}
+
+@media (max-width: 500px){
+  .interest ul{
+    grid-template-columns: repeat(1,1fr);
+  }
+}
